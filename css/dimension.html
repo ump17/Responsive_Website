@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<head> 
+	<title> 
+		Get the size of the screen, current 
+		web page and browser window using 
+		jQuery? 
+	</title> 
+	
+	<script src= 
+		"https://code.jquery.com/jquery-2.2.4.min.js"> 
+	</script> 
+</head> 
+
+<body> 
+	<h1 style="color: green"> 
+		GeeksforGeeks 
+	</h1> 
+	
+	<b> 
+		How to get the size of the screen, 
+		current web page and browser 
+		window using jQuery? 
+	</b> 
+	
+	<p>Window Height is: 
+		<span class="windowHeight"></span> 
+	</p> 
+	
+	<p>Windows Width is: 
+		<span class="windowWidth"></span> 
+	</p> 
+	
+	<p>Document Height is: 
+		<span class="documentHeight"></span> 
+	</p> 
+	
+	<p>Document Width is: 
+		<span class="documentWidth"></span> 
+	</p> 
+	
+	<p>Screen Height is: 
+		<span class="screenHeight"></span> 
+	</p> 
+	
+	<p>Screen Width is: 
+		<span class="screenWidth"></span> 
+	</p> 
+	
+	<button id="btn"> 
+		Click Here to check the dimensions 
+		of the page: 
+	</button> 
+	
+	<script type="text/javascript"> 
+		$("#btn").on("click", function () { 
+			windowHeight = $(window).height(); 
+			windowWidth = $(window).width(); 
+			documentHeight = $(document).height(); 
+			documentWidth = $(document).width(); 
+			screenHeight = screen.height; 
+			screenWidth = screen.width; 
+
+			document.querySelector('.windowHeight').textContent 
+						= windowHeight; 
+			document.querySelector('.windowWidth').textContent 
+						= windowWidth; 
+			document.querySelector('.documentHeight').textContent 
+						= documentHeight; 
+			document.querySelector('.documentWidth').textContent 
+						= documentWidth; 
+			document.querySelector('.screenHeight').textContent 
+						= screenHeight; 
+			document.querySelector('.screenWidth').textContent 
+						= screenWidth; 
+		}); 
+	</script> 
+</body> 
+
+</html>					 

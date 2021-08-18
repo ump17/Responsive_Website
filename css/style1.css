@@ -1,0 +1,171 @@
+*{
+	margin: 0px;   /* compulsory=> boder ka whiteness gayab hoga*/
+	padding: 0px;
+	box-sizing: border-box;
+}
+body{ /* bydefault values dene k liye*/
+    font-size: 20px;
+    overflow-x: hidden; /* if kuch box k bahar gya toh dikhe na, sab normallge, (RESPONSIVE), taaki neeche scroll baar na aaye*/
+    color: white;
+	font-family: 'Flamenco', cursive;	
+}
+
+
+header{
+    background-image:linear-gradient(rgba(141, 118, 118, 0.6),rgba(0,0,0,0.6)), url('../images/cake.jpg');
+    /* blackness background m laane k liye rgba ka use*/
+    height: 100vh;
+    background-size: cover; /* ye nhi likha to background image sahi se nhi dikhega*/
+    background-repeat: no-repeat; /* taaki 1 k neeche 1 na ddikhe */
+
+}
+
+.clearfix:after{ /* after likhkr hi kaam banega*/
+	content: ".";
+	visibility: hidden;
+	display: block; /* symbol k neeche text laane k liye*/
+	height: 0px;
+	clear: both;
+}
+.row{
+	max-width: 1180px; /* automatic adjust kare isliye*/
+	margin: 0 auto;    /* taaki center m rahe, kkr symbol thoda right m aagya*/
+}
+.logo{
+	height: 120px;
+	width: auto; /* height k hisab se adjust kare isliye auto*/
+	float: left; /* taaki image left m rahe*/
+	margin-top: 20px; /* top se 20px neeche aaya logo*/
+}
+.main-nav{ /* top corner waale*/
+	float: right;
+	margin-top: 60px;
+}
+.main-nav li{
+    display: inline-block; /* taaki 1 single hori. line m aajaaye*/
+    list-style: none; /* dot hat jayega,koi bi symbol */
+    margin-left: 40px; /* taaki chipke hue words, durr hojaaye*/
+}
+.main-nav li a{
+    padding: 5px 0; /* top-down se 5, left-right se 0*/
+    color: #fff; /* text color  white*/
+    text-decoration: none; /* taaki neeche ka underline hat jaye, same add list-style ;*/
+    text-transform: uppercase; /* sab uppercase m aajaye*/
+    font-size: 90%; /* body k relative change ho, 0.9*20=18px ( RESPONSIVE) */
+	font-weight: 100;
+}
+.main-nav li a:hover{ /* cursor laane p neeche purple line aaye, 2px is padding */
+    border-bottom: 2px solid #bf55ec;
+}
+    
+
+.main-content-header{ /* welcome to cafe */
+	width: 1180px; /* same as row ka width*/
+	padding:0 2%;
+	position: absolute;  /* header k relative khudko change krega( RESPONSIVE) */
+	/*border: 1px solid red;*/
+	top: 55%; /* taaki beech m aajaye*/
+    left: 50%;
+    transform: translate(-50%, -50%); /* taaki sahi posi p aajaye, left:6% p bhi yahi ho */
+}
+
+h1{
+	color: #fff;
+	font-size: 240%;  /* to make RESPONSIVE*/
+	word-spacing: 5px;
+	letter-spacing: 3px;
+	margin-bottom: 20px; /* taaki vo neeche k 2 button aur neeche jaaye */
+	text-transform: uppercase;
+	font-weight: lighter;
+}
+.btn{
+	display: inline-block;
+	padding: 10px 30px; /* top-down se 10, left-right se 30*/
+	font-weight: lighter;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 200px;   /* taaki thoda curvy box ho, dono button k time */
+	transition: background-color 0.2s, border 0.2s, color 0.2;
+}
+.btn-full{ /* btn se inherit karra h kuch prop */
+	background-color: transparent;
+	color: #bf55ec;
+	margin-right: 15px;           /* 2nd button se thoda duur ho */
+	border: 1px solid #bf55ec; /* 1px is padding, taali vo box sa bane*/
+}
+
+.btn-full:hover{
+	background-color: #fff;
+}
+
+.btn-nav{
+	background-color: transparent;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.btn-nav:hover{
+	background-color: #bf55ec;
+}
+
+.colorchange{
+	animation:  colorchangethapa 1s infinite;
+}
+
+@keyframes colorchangethapa{ /* keyframe animation k liye, then uska naam ,here colorchngethapa*/
+	0%{color: red;}
+	25%{color:#bf55ec; ;}
+	50%{ color: white; }
+	100%{ color:#bf55ec;  }
+}
+
+.mobile-icon{display: none;}
+
+/*////////////Responsive query//////////*/
+
+@media only screen and (max-width: 1180px){ /* 1180 p sab dikh rha h ,desktop view */
+	.main-content-header{
+		width:100%;
+		padding:0 2%;
+	}
+
+	.row{
+		width:100%;
+		padding:0 2%;
+	}
+}
+
+@media only screen and (max-width: 998px){ /* tablet view p size kam ho */
+	h1{font-size: 200%;}
+}
+
+@media only screen and (max-width: 768px){
+	h1{font-size: 180%;}	
+
+	.main-nav{display: none;} /* becoz 768 width p .row neeche aajata hai */
+	 /* vo 4 element ka row gayab ho and icon aajaye*/
+	 
+	.mobile-icon{ display: inline-block; 
+		color: #fff;
+        margin-top: 30px;
+		margin-right: 20px;
+		float: right;  /* right side bar*/
+	}
+
+	.main-nav{float: left;}
+
+	.main-nav li{
+		
+		display: block;
+		margin-top: 3px; /* upr se scroll bar kitna neeche aayega*/
+	}
+	
+	@media only screen and (max-width: 480px){
+		.btn-full{
+			margin-bottom: 10px;
+		}
+	
+		h1{font-size: 150%;}
+	}
+
+}
